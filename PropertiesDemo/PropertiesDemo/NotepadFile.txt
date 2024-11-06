@@ -196,6 +196,59 @@ if(value>0)//Validation
 _empid=value;//Accept
 }
 }
+**************************************************
+Constructors:
+it is used to create a object of a class.
+Constructor is a mehtod with the same name as that of the class.
+We accept the data from the constructor and create a object of that data.
+
+
+1) Default Constructor---- doesnot have any parameter.
+2) Parameterised Constructor
+3) Copy Constructor
+4) static Constuctor: is used to initilize the data for the calss for the first time before any other constructor get called
+It cannot have access specifier.
+Static Constructor is called once in the lifetime of the class ,and that too before any other constuctor is called, and so the use of static constructor, is initialising the data for the first time only.
+
+class Product{
+public Product()
+{
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
