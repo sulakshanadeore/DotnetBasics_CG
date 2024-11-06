@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="ScientificCalculator.cs" />
     <Compile Include="SimpleCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

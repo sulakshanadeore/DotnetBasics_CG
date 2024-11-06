@@ -26,17 +26,31 @@ namespace FirstDemo_BasicsApp
             //empid = Employee.GenerateEmployeeID();
             //Console.WriteLine(empid);
 
-            Employee emp = new Employee();
-            Console.WriteLine("Enter employeename");
-            string _ename=Console.ReadLine();
-            Console.WriteLine("Enter city");
-            string _city=Console.ReadLine();
-            Console.WriteLine("Enter sal");
-            float _sal=Convert.ToSingle(Console.ReadLine());
-            emp.AcceptEmpDetails(_ename, _city, _sal);
+            //Employee emp = new Employee();
+            //Console.WriteLine("Enter employeename");
+            //string _ename=Console.ReadLine();
+            //Console.WriteLine("Enter city");
+            //string _city=Console.ReadLine();
+            //Console.WriteLine("Enter sal");
+            //float _sal=Convert.ToSingle(Console.ReadLine());
+            //Employee.AcceptEmpDetails(_ename, _city, _sal);
            
             
-            emp.ShowEmpDetails();
+            //emp.ShowEmpDetails();
+
+            
+            Console.WriteLine("Enter movie name");
+            string name=Console.ReadLine();
+            Console.WriteLine("Enter the ticketid");
+            int ticketId=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter seat number");
+            string seatNo=Console.ReadLine();   
+            MovieClass m=new MovieClass();    
+           MovieClass details= m.ReturnMovieDetails(name,ticketId,seatNo);
+            Console.WriteLine(MovieClass.moviename);
+            Console.WriteLine(details.ticketId);
+            Console.WriteLine(details.seatNumber);
+
 
 
             

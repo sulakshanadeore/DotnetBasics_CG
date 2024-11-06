@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB923269-ED1E-4DD6-8916-547D096BF774}</ProjectGuid>
+    <ProjectGuid>{B52F6C81-DB06-44A4-8879-B118250E790F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FirstDemo_BasicsApp</RootNamespace>
-    <AssemblyName>FirstDemo-BasicsApp</AssemblyName>
+    <RootNamespace>PropertiesDemo</RootNamespace>
+    <AssemblyName>PropertiesDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LogicLibraryForCalculator">
-      <HintPath>..\LogicLibraryForCalculator\bin\Debug\LogicLibraryForCalculator.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
