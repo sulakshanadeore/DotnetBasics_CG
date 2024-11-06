@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 using System.Threading;
 
 namespace PropertiesDemo
@@ -54,8 +55,39 @@ namespace PropertiesDemo
         {
             // workingWithProperties();
 
-            int rt,sq;
-            SquareRoot(100, out  rt, out  sq);
+            Products p = new Products();//Default constructor
+            Console.WriteLine("Enter productname/");
+            p.ProductName=Console.ReadLine();
+            Console.WriteLine("Enter price ");
+            p.ProductPrice  =Convert.ToInt32(Console.ReadLine());
+
+            Products p1 = new Products(20, "Coffee");
+            Products p2 = new Products(30, "Chocolate Coffee", "Per Cup");
+
+            Console.WriteLine("Print Product Details");
+            Console.WriteLine(p.ProductId);
+            Console.WriteLine(p.ProductName);
+            Console.WriteLine(p.ProductPrice);
+            Console.WriteLine("=======");
+            Console.WriteLine(p1.ProductId);
+            Console.WriteLine(p1.ProductName);
+            Console.WriteLine(p1.ProductPrice);
+            Console.WriteLine("=======");
+            Console.WriteLine(p2.ProductId);
+            Console.WriteLine(p2.ProductName);
+            Console.WriteLine(p2.ProductPrice);
+            //WorkingwithRefOutPArams();
+
+
+
+            Console.Read();
+
+        }
+
+        private static void WorkingwithRefOutPArams()
+        {
+            int rt, sq;
+            SquareRoot(100, out rt, out sq);
             Console.WriteLine("Squre Root=" + rt);
             Console.WriteLine("Squre =" + sq);
 
@@ -66,27 +98,21 @@ namespace PropertiesDemo
             Console.WriteLine(cube_op);
 
             Console.WriteLine("***Using single output parameter***");
-            int SquareAns=CalculateSquareCubeUsingOutParameter(input,out int cubeAnswer);
-            Console.WriteLine("Square= " +SquareAns);
+            int SquareAns = CalculateSquareCubeUsingOutParameter(input, out int cubeAnswer);
+            Console.WriteLine("Square= " + SquareAns);
             Console.WriteLine("Cube=" + cubeAnswer);
-
-
 
             Console.WriteLine("============");
             int fno = 10;
             int sno = 20;
-            
+
             Console.WriteLine($"Now the value of fno={fno}");
             Console.WriteLine($"Now the value of sno{sno}");
 
             //SwapNos(fno, sno);
-            SwapNosAddress(ref fno,ref sno);
+            SwapNosAddress(ref fno, ref sno);
             Console.WriteLine($"Now the value of fno={fno}");
             Console.WriteLine($"Now the value of sno{sno}");
-
-
-            Console.Read();
-
         }
 
         private static void workingWithProperties()
