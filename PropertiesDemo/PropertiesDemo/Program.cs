@@ -25,9 +25,54 @@ namespace PropertiesDemo
         }
 
 
+        //Out parameters
+        public static void CalculateSquareCube(int no,out int squareOutput,out int cubeOutput)
+        {
+            squareOutput = no * no;
+            cubeOutput = no * no * no;
+            
+        
+        }
+
+
+        public static int CalculateSquareCubeUsingOutParameter(int no, out int cubeOutput)
+        {
+          int  squareOutput = no * no;
+            cubeOutput = no * no * no;
+            return squareOutput;
+
+        }
+
+        public static void SquareRoot(int no, out int sqRoot,out int square)
+        { 
+        sqRoot=Convert.ToInt32(Math.Sqrt(no));
+            square = no * no;
+
+        }
+
         static void Main(string[] args)
         {
             // workingWithProperties();
+
+            int rt,sq;
+            SquareRoot(100, out  rt, out  sq);
+            Console.WriteLine("Squre Root=" + rt);
+            Console.WriteLine("Squre =" + sq);
+
+            Console.WriteLine("-----------");
+            int input = 10;
+            CalculateSquareCube(input, out int sq_op, out int cube_op);
+            Console.WriteLine(sq_op);
+            Console.WriteLine(cube_op);
+
+            Console.WriteLine("***Using single output parameter***");
+            int SquareAns=CalculateSquareCubeUsingOutParameter(input,out int cubeAnswer);
+            Console.WriteLine("Square= " +SquareAns);
+            Console.WriteLine("Cube=" + cubeAnswer);
+
+
+
+            Console.WriteLine("============");
             int fno = 10;
             int sno = 20;
             
