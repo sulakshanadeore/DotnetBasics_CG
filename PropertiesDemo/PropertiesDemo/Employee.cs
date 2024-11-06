@@ -22,13 +22,13 @@ namespace PropertiesDemo
                 EmpCnt = _empid;
             return _empid;
             }
-        //private set 
-        //    {
-        //        //writing the value to the varibale
-        //    _empid = value; 
-            
-        //    }
-        
+            private set
+            {
+                //writing the value to the varibale
+                _empid = value;
+
+            }
+
         }
 
         private string _password;
@@ -66,6 +66,17 @@ namespace PropertiesDemo
         
         }
 
+
+        public Employee DisplayEmployeeDetails()
+        {
+            Employee edata = new Employee();
+            edata.EmployeeID = EmployeeID;
+            edata.EmployeeName = EmployeeName;
+            edata.EmpCity = EmpCity;
+            edata.Deptno = Deptno;
+
+            return edata;
+        }
 
 
 

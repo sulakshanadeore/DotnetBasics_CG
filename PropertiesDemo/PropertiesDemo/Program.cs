@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO.Pipes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace PropertiesDemo
 {
@@ -40,28 +36,33 @@ namespace PropertiesDemo
                 emp.CheckPassword = Console.ReadLine();
                 if (emp.isCorrect)
                 {
+                    Employee empdetails=emp.DisplayEmployeeDetails();
 
-
-
-                    Console.WriteLine($"Your Employee ID: {emp.EmployeeID}");
-                    Console.WriteLine($"Employee Name: {emp.EmployeeName}");
-                    Console.WriteLine($"Employee City: {emp.EmpCity}");
-                    Console.WriteLine($"Deptno Of Employee: {emp.Deptno}");
-                    Console.WriteLine($"Joining Date: {emp.JoiningDate}");
+                    Console.WriteLine($"Your Employee ID: {empdetails.EmployeeID}");
+                    Console.WriteLine($"Employee Name: {empdetails.EmployeeName}");
+                    Console.WriteLine($"Employee City: {empdetails.EmpCity}");
+                    Console.WriteLine($"Deptno Of Employee: {empdetails.Deptno}");
+                    Console.WriteLine($"Joining Date: {empdetails.JoiningDate}");
                 }
                 else
                 {
                     Console.WriteLine("U cannot see the data.....");
                     Console.WriteLine("Now exiting the app...");
+
+                    Thread.Sleep(2000);
                     Environment.Exit(1);
                     
                 }
 
                 Console.WriteLine("Do u want to add more employees? Press 'Y' to continue...");
                 ans = Convert.ToChar(Console.ReadLine());
+                if (ans == 'N')
+                {
+                Environment.Exit(1);
+                }
             }
             while (ans == 'Y');
-
+            
             Console.Read();
 
         }
