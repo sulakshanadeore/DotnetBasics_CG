@@ -34,6 +34,27 @@ namespace PropertiesDemo
             UOM = uom;
         }
 
+
+        public Products(int prodprice, string prodname, string uom, int supplierid) 
+            : this(prodprice, prodname, uom)
+        { 
+        this.supplierid = supplierid;    
+        }
+
+
+        public Products(Products copy)
+        {
+            this.ProductId = copy.ProductId;
+            this.ProductName = copy.ProductName;
+            this.ProductPrice = copy.ProductPrice;
+            this.UOM = copy.UOM;    
+            this.supplierid = copy.supplierid;
+
+        }
+
+
+
+        public int supplierid { get; set; }
         public string UOM { get; set; }
         public int ProductPrice { get; set; }
         public int ProductId { get; private set; }

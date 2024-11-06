@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace PropertiesDemo
@@ -64,6 +65,10 @@ namespace PropertiesDemo
             Products p1 = new Products(20, "Coffee");
             Products p2 = new Products(30, "Chocolate Coffee", "Per Cup");
 
+            Products p3 = new Products(40, "Biscuits", "Per PAck", 101);
+
+            Products p4 = new Products(p3);
+
             Console.WriteLine("Print Product Details");
             Console.WriteLine(p.ProductId);
             Console.WriteLine(p.ProductName);
@@ -76,6 +81,22 @@ namespace PropertiesDemo
             Console.WriteLine(p2.ProductId);
             Console.WriteLine(p2.ProductName);
             Console.WriteLine(p2.ProductPrice);
+            Console.WriteLine(p2.UOM);
+            Console.WriteLine("=======");
+            Console.WriteLine(p3.ProductId);
+            Console.WriteLine(p3.ProductName);
+            Console.WriteLine(p3.ProductPrice);
+            Console.WriteLine(p3.UOM);
+            Console.WriteLine(p3.supplierid);
+            Console.WriteLine("--------");
+            Console.WriteLine("Copy of p3 object");
+            Console.WriteLine(p4.ProductId);    
+            Console.WriteLine(p4.ProductName);
+            Console.WriteLine(p4.UOM);
+            Console.WriteLine(p4.ProductPrice);
+            Console.WriteLine(p4.supplierid);
+
+
             //WorkingwithRefOutPArams();
 
 
