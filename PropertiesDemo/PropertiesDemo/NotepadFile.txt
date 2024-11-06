@@ -1,0 +1,201 @@
+﻿core---console-----.dll and .exe
+other os---windows---exe
+		linux------dll
+
+
+framework---console---.exe
+Windows(exe)			
+
+namespace: logical collection of classes ,structs and enums.
+
+Identifying the classes if they have same name for themselves, but they should be in different namespace.
+ConsoleApp1_Fr.Program
+ConsoleApp2.Program
+
+
+System
+-------------------------------------------------------------------------------------
+datatypes : 
+int,float,string,char,double,decimal,bool,datetime
+
+
+VALUE:int,float,char,double,decimal,bool,datetime
+Only struct and Enum are value types
+Everything else is a reference type.
+Value types are stored on the stack.
+
+
+REFERENCE: string
+String is a class and so its a reference type
+Reference types are stored on the heap.
+----------------------------------------------------------
+		Language specific compiler
+C#---- CSharp compiler------ csc.exe
+VB.net---- VB.NET Compiler-----vbc.exe
+J# ----J# Compiler-------------------jsc.exe
+
+
+SourceCode--------> CSC.EXE------->MSIL Code------> Common Language Runtime & JIT compiler-------> Native code(Code understood by the OS)
+This native code executes.
+MSIL----Microsoft Intermediate Language(.exe or .dll)----->Compilation
+
+MSIL Code----> JIT compiler----> Native Code---->Execution---->Runtime
+
+MSIL is also called as Managed Code.
+
+The cpp compiled code  is unmanaged code.
+
+unmanaged-----> managed
+cpp------> .net
+
+cpp--->.dll--->commands
+RCW ---Remote callable wrapper.
+
+.net----> cpp
+managed   unmanaged
+CCW---Com Callable wrapper
+
+CLR is responsible for:
+1) Security
+2) Memory Mgt
+3) Garbage Collection
+
+There are 3 types of JIT compiler
+Standard------Normal JIT compiler is called STANDARD JIT
+Pre-JIT------>carry the pre compiled code for installation on client/production machine.
+This is called as pre jitted code
+Econo JIT-----Economy Mode of JIT is used for machines/devise that have low memory consideration.
+
+-------------------------------------------
+
+1) New Project----Console App(.NET Framework)---- FirstDemo-BasicsApp(Exe)
+Solution Name: DotnetBasics
+2) Right click Solution in solution explorer, add new project----> Class Library---- >LogicLibraryForCalculator
+3) Set the dependency of the project
+
+FirstDemo-BasicsApp(Exe)     		depends on			Class Library(dll)
+               User Interface						                      Logic
+
+
+4) Right click Solution in solution explorer, project dependencies,  app depends on library(library must be below) and app must be above 
+click the checkbox to yes(tick yes)
+5) Add the reference:
+    a) Right click the library, and click build
+     b)Right click the app, and click build
+     c) Go to references of application, right click it, add reference,browse, solution,library project,bin,debug,.dll(Click add), then ok.
+      d) Open the Program.cs, add the following line:
+using LogicLibraryForCalculator;
+-----------------------------------------------------------------------------------------------------
+OOP's
+Object Oriented Programming
+Major Pillars:
+1)Abstraction
+2)Inheritance
+3) Polymorphsim
+4)Encapsulation
+
+Minor:
+1)Typing
+2) Persistence
+
+
+Write code for Calculator:
+Addition,Subtraction,Multiply,Divide,Mod---functionalities-----Methods
+
+whatever the methods act on is the data and data resides in the variables------variable
+Class-----that will hold methods and variables
+Class encapsulates the logic inside the methods using variables on which it acts.
+Class is a template for working with the methods
+Class is a blue print(outline) that represents entities.
+
+SOLID:
+1) Single Responsibility Principle(SRP)Class has a single responsibility.
+
+2) Open/Closed Principle(OCP): software entities should be open for extension but closed for modification.
+
+3) Liskow Substitution Principle(LSP):Derived/Child classes must be substitutable for parent classes.
+
+4) Interface Segregation Principle(ISP): break large/r interfaces into smaller ones so that every class who inherits the interface need not implement all the methods of the interface though it doesn't 
+
+5) Dependency Inversion Principle(DIP): Abstractions should not depend on details, but details should depend on abstraction.
+
+
+Advantages:
+1)Readable
+2)Maintainable
+3)Reduced dependency(Coupling)
+4)Scalability
+5)Flexibility
+***********************************
+1)static methods and static variables:
+*That donot require the instance of the class to be created, they can be called directly on the class name.
+*Whenever u want single copy of a method, then create static method.
+*Whenever u want single copy of a variable, then create static variable.
+*Static variable can be used in a static method as well as non static method.
+* A non static variable cannot be used in static method, but it can be used in nonstatic method
+
+
+									static method       nonstatic method
+static variable								Yes				Yes
+nonStatic variable declared in the class         	No                           Yes
+nonStatic variable declared in the method           Yes                           No
+
+
+Employee.varibake
+Employee.methodname
+static varibale------static method
+
+Employee emp=new Enployee()
+emp.methodname//nonstatic method
+
+
+
+non static varibale====static method
+//keyword  returntype nameOfMethod
+static string Greet()
+{
+string s="Greetings of the day!!";
+return s;
+
+}
+
+Access Specifiers:
+public : it is accessible everywhere inside and outside the namespace.
+private
+protected
+internal
+protected internal
+
+2) instance methods
+
+
+Variable---- public
+static ----
+instance -----
+
+variables get exposed, I use return types to hide them, but get exposed becoz of public.
+
+We will encapsulate the variable in the special method, the method will be able to accept the data and return the data with a help of a variable,
+this is called as property.
+Use: 1) Validation
+
+private int _empid;
+public int EmployeeID
+{
+get{
+//return the value
+return _empid;
+
+}
+
+set
+{
+//Accepting and validation
+if(value>0)//Validation
+{
+_empid=value;//Accept
+}
+}
+
+
+}
